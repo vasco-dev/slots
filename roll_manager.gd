@@ -19,18 +19,17 @@ var roller_results = [	[0,1,2],
 #				  1,	 1,		 1,		 1,		 1,
 #				  2]	 2]		 2]		 2]		 2]
 
-
+# matches per row and column
 var col_matches = [false,false,false,false,false]
 var row_matches = [false,false,false]
 
+# are rollers currently rolling
 var is_rolling = false
 
 func _ready():
+	#get refs for rollers
 	all_rollers = get_children()
-	
-	# DEBUG
-	#yield(get_tree().create_timer(1), "timeout")
-	#_do_all_rolls()
+
 
 # make all rollers do a roll
 func _do_all_rolls():
@@ -54,7 +53,7 @@ func _do_all_rolls():
 			
 			i = 1+i
 		
-		# endfor ####################################
+		# endfor
 		
 		# wait until the roll animation has finished playing
 		yield(all_rollers[4]._do_roll(), "completed")
@@ -65,9 +64,10 @@ func _do_all_rolls():
 		_check_for_matches()
 		
 		is_rolling = false
-#endfunc
 	
-	
+	#endif
+
+
 # checks if there are any valid matches
 func _check_for_matches():
 	
@@ -110,25 +110,34 @@ func _check_for_matches():
 		j = 1 + j
 		
 	#end ROW while
-		
 
-func match_col(var col_id = -1):
+
+# func to run when a column matches
+func match_col(var col_id = -1):	
+	# if the matched column is not already matched 
+	# (to avoid winning multiple times for the same column)
 	if col_matches[col_id] != true:
+		# set this column to already matched
 		col_matches[col_id] = true
-		print("COLUMN MATCH")
+		# win
 		_win_multiplier(3)
-	pass
-	
+	#endif
+
+# func to run when a row matches
 func match_row(var row_id = -1):
+	# if the matched row is not already matched 
+	# (to avoid winning multiple times for the same row)
 	if row_matches[row_id] != true:
+		# set this row to already matched
 		row_matches[row_id] = true	
-		print("ROW MATCH")
+		# win
 		_win_multiplier(5)
-	pass	
+	#endif
 	
+# send the winning multiplier back to spin manager
 func _win_multiplier(var multiplier = 0):
 	spin_manager._win_with_multiplier(multiplier)
-	pass
-	
+
+# receive spin manager ref
 func _set_spin_manager(var new_spin_manager):
 	spin_manager = new_spin_manager

@@ -1,18 +1,24 @@
 extends ToolButton
 
+# roll manager ref
 var _roll_manager
 
+# current balance
 var balance = 10000
+# current bet value
 var current_bet = 1
+# ammount spent on bet
 var total_bet = 0
 
+# toggle auto bet
 var auto_bet = false
 
-
+# set starting balance and reset total bet to zero
 func _ready():
 	_set_balance(balance)
-	_set_total_bet(total_bet)
+	_set_total_bet(0)
 
+# func to run when spin button is pressed
 func _on_Spin_pressed():
 	
 	# wait a bit so that focus is not on the bet input box, or else the value wont be updated
@@ -22,10 +28,15 @@ func _on_Spin_pressed():
 	# current bet is not bigger than balance
 	# another roll is not already happening
 	if balance >= current_bet and _roll_manager.is_rolling == false:
-				
+		
+		# remove bet value from balance
 		_set_balance(balance - current_bet)
-		_set_total_bet(total_bet + current_bet)		
+		# add bet to total bet
+		_set_total_bet(total_bet + current_bet)
+		
+		# do rolls
 		_roll_manager._do_all_rolls()
+		# play rolling sound
 		$RollSound.play()
 		
 	# endif
@@ -34,7 +45,9 @@ func _on_Spin_pressed():
 	if(auto_bet):
 		yield(get_tree().create_timer(1), "timeout")
 		_on_Spin_pressed()
-		
+	
+	#endif
+	
 # toggle auto_bet value when auto_bet button is pressed
 func _on_Auto_pressed():
 	auto_bet = !auto_bet
@@ -57,10 +70,10 @@ func _on_SpinBox_value_changed(value):
 	# keep waiting until roll stops
 	while _roll_manager.is_rolling == true:
 		yield(get_tree().create_timer(0.1), "timeout")
+	#endwhile
 	
 	# update current bet value
 	current_bet = value
-	
 	
 # set new value for balance
 func _set_balance(var ammount = 0):
@@ -74,8 +87,11 @@ func _set_total_bet(var ammount = 0):
 
 # win
 func _win_with_multiplier(var multiplier = 1):
-	print("WON: ",current_bet*multiplier)
+	#print("WON: ",current_bet*multiplier)
+	
+	# play win sound
 	$WinSound.play()
+	# add winnings according to the multiplier balance
 	_set_balance(balance + current_bet*multiplier)
 
 

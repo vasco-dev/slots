@@ -23,23 +23,20 @@ var fruitTex = []
 # rng
 var rng = RandomNumberGenerator.new()
 
-
 func _ready():
 	
 	# loads and pushes all the possible fruit textures 
 	# into the fruitTex array
 	for imgPath in filePath:
 		fruitTex.push_back(load(imgPath))
-	
-	# DEBUG 
-	#_do_roll()
-	
-	pass 
+	#endfor
 
 # calcs for the random roll
 func _do_roll():
 	
+	# iterator
 	var i = 0
+	# get ref to all children
 	var children = get_children()
 	
 	# for each child in the slot
@@ -64,20 +61,20 @@ func _do_roll():
 				mid_row_result = rnum
 			2:
 				bot_row_result = rnum
-
+		#endmatch
+		
 		i = 1+i
 
-	# endfor #################################
+	# endfor 
 	
-	#rect_position = Vector2(rect_position.x, startPosY)
-	#yield(get_tree().create_timer(timeToStart), "timeout")
-	
-
-	
+	# create tween
 	var this_tween = create_tween()
+	# tween to starting position, simulates preroll
 	this_tween.tween_property(self ,"rect_position:y", startPosY, timeToStart)
+	# tween to final position, simulates rolling animation
 	this_tween.tween_property(self ,"rect_position:y", finalPosY, timeToRoll)
 	
+	# yield until tween is done
 	yield(get_tree().create_timer(timeToRoll + timeToStart), "timeout")
 	
-	pass
+	
