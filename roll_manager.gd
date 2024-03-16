@@ -41,6 +41,7 @@ func _do_all_rolls():
 		
 		# roller number
 		var i = 0
+		
 		# run through each roller
 		for roller in all_rollers:
 			# roll current roller
@@ -90,7 +91,6 @@ func _check_for_matches():
 			# check if all rows in the same column
 			if roller_results[i][0] == roller_results[i][1] and roller_results[i][1] == roller_results[i][2]:
 				match_col(i)
-
 			# endif
 			
 			# check item by item in each collumn for the same row
@@ -105,7 +105,7 @@ func _check_for_matches():
 		# if nr of matches in a row is equal to the number of columns in that row
 		if row_match_nr == roller_results.size():
 			match_row(j)
-		
+		# endif
 		
 		j = 1 + j
 		

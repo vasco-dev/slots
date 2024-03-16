@@ -34,7 +34,7 @@ func _ready():
 # calcs for the random roll
 func _do_roll():
 	
-	# iterator
+	# iteration
 	var i = 0
 	# get ref to all children
 	var children = get_children()
