@@ -57,9 +57,10 @@ func _on_SpinBox_value_changed(value):
 	# keep waiting until roll stops
 	while _roll_manager.is_rolling == true:
 		yield(get_tree().create_timer(0.1), "timeout")
-		
+	
+	# update current bet value
 	current_bet = value
-	print(current_bet)
+	
 	
 # set new value for balance
 func _set_balance(var ammount = 0):
