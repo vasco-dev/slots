@@ -40,6 +40,7 @@ margin_right = -202.0
 margin_bottom = 5832.0
 script = ExtResource( 10 )
 finalPosY = 120
+timeToRoll = 4
 timeToStart = 0.2
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER0"]
@@ -493,6 +494,7 @@ margin_right = -62.0
 margin_bottom = 5832.0
 script = ExtResource( 10 )
 finalPosY = 120
+timeToRoll = 4
 timeToStart = 0.4
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER1"]
@@ -946,6 +948,7 @@ margin_right = 78.0
 margin_bottom = 5832.0
 script = ExtResource( 10 )
 finalPosY = 120
+timeToRoll = 4
 timeToStart = 0.6
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER2"]
@@ -1399,6 +1402,7 @@ margin_right = 218.0
 margin_bottom = 5832.0
 script = ExtResource( 10 )
 finalPosY = 120
+timeToRoll = 4
 timeToStart = 0.8
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER3"]
@@ -1852,6 +1856,7 @@ margin_right = 358.0
 margin_bottom = 5832.0
 script = ExtResource( 10 )
 finalPosY = 120
+timeToRoll = 4
 timeToStart = 1.0
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER4"]

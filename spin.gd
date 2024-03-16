@@ -26,6 +26,8 @@ func _on_Spin_pressed():
 		_set_balance(balance - current_bet)
 		_set_total_bet(total_bet + current_bet)		
 		_roll_manager._do_all_rolls()
+		$RollSound.play()
+		
 	# endif
 	
 	# if auto_bet is on wait a bit and keep betting 
@@ -72,6 +74,7 @@ func _set_total_bet(var ammount = 0):
 # win
 func _win_with_multiplier(var multiplier = 1):
 	print("WON: ",current_bet*multiplier)
+	$WinSound.play()
 	_set_balance(balance + current_bet*multiplier)
 
 
