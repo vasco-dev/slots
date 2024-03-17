@@ -62,8 +62,8 @@ size_flags_stretch_ratio = 0.5
 [node name="GAME LAYER" type="CanvasLayer" parent="."]
 
 [node name="GAME" parent="GAME LAYER" instance=ExtResource( 1 )]
-margin_top = -69.0
-margin_bottom = -69.0
+margin_top = -68.0
+margin_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 

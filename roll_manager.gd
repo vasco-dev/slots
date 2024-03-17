@@ -91,7 +91,6 @@ func _check_for_matches():
 			# check if all rows in the same column
 			if (roller_results[i][0] == roller_results[i][1] and roller_results[i][1] == roller_results[i][2]):
 				match_col(i)				
-				print("match col ", i)
 			# endif
 			
 			# avoid array out of bounds
@@ -125,6 +124,8 @@ func match_col(var col_id = 0):
 		col_matches[col_id] = true
 		# win
 		_win_multiplier(3)
+		
+		print("match col ", col_id)
 	#endif
 
 # func to run when a row matches
