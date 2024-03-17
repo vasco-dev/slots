@@ -13,6 +13,9 @@ var total_bet = 0
 # toggle auto bet
 var auto_bet = false
 
+# is the win animation playing
+var is_win_anim = false
+
 # set starting balance and reset total bet to zero
 func _ready():
 	_set_balance(balance)
@@ -43,7 +46,11 @@ func _on_Spin_pressed():
 	
 	# if auto_bet is on wait a bit and keep betting 
 	if(auto_bet):
-		yield(get_tree().create_timer(1), "timeout")
+		# wait a bit after the rolls
+		yield(get_tree().create_timer(0.3), "timeout")
+		
+		while(is_win_anim):
+			yield(get_tree().create_timer(0.1), "timeout")
 		_on_Spin_pressed()
 	
 	#endif
@@ -87,14 +94,24 @@ func _set_total_bet(var ammount = 0):
 
 # win
 func _win_with_multiplier(var multiplier = 1):
-	#print("WON: ",current_bet*multiplier)
 	
 	# play win sound
 	$WinSound.play()
+	
 	# add winnings according to the multiplier balance
 	_set_balance(balance + current_bet*multiplier)
 
-
+	# set is playing win animation	
+	is_win_anim = true
+	
+	$"WINMSG".text = str("YOU WON\n €", current_bet*multiplier)
+	
+	$"WINMSG".visible = true	
+	yield(get_tree().create_timer(1.8), "timeout")	
+	$"WINMSG".visible = false
+	
+	# reset is playing win animation	
+	is_win_anim = false
 
 
 

@@ -17,27 +17,19 @@ flags = 4
 load_path = "res://.import/S_BG.png-1ca9a0e258c1a1d5f3092c6a89c828aa.stex"
 
 [node name="BASE" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -480.0
-margin_top = -360.0
-margin_right = -480.0
-margin_bottom = -360.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="ROLL_MANAGER" type="Node" parent="."]
 script = ExtResource( 11 )
 
 [node name="ROLLER0" type="VBoxContainer" parent="ROLL_MANAGER"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = -342.0
-margin_top = -240.0
+margin_top = 113.0
 margin_right = -202.0
-margin_bottom = 5832.0
+margin_bottom = 6185.0
 script = ExtResource( 10 )
 finalPosY = 120
 timeToRoll = 4
@@ -485,13 +477,11 @@ stretch_mode = 6
 
 [node name="ROLLER1" type="VBoxContainer" parent="ROLL_MANAGER"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = -202.0
-margin_top = -240.0
+margin_top = 113.0
 margin_right = -62.0
-margin_bottom = 5832.0
+margin_bottom = 6185.0
 script = ExtResource( 10 )
 finalPosY = 120
 timeToRoll = 4
@@ -939,13 +929,11 @@ stretch_mode = 6
 
 [node name="ROLLER2" type="VBoxContainer" parent="ROLL_MANAGER"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = -62.0
-margin_top = -240.0
+margin_top = 113.0
 margin_right = 78.0
-margin_bottom = 5832.0
+margin_bottom = 6185.0
 script = ExtResource( 10 )
 finalPosY = 120
 timeToRoll = 4
@@ -1393,13 +1381,11 @@ stretch_mode = 6
 
 [node name="ROLLER3" type="VBoxContainer" parent="ROLL_MANAGER"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = 78.0
-margin_top = -240.0
+margin_top = 113.0
 margin_right = 218.0
-margin_bottom = 5832.0
+margin_bottom = 6185.0
 script = ExtResource( 10 )
 finalPosY = 120
 timeToRoll = 4
@@ -1847,13 +1833,11 @@ stretch_mode = 6
 
 [node name="ROLLER4" type="VBoxContainer" parent="ROLL_MANAGER"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = 218.0
-margin_top = -240.0
+margin_top = 113.0
 margin_right = 358.0
-margin_bottom = 5832.0
+margin_bottom = 6185.0
 script = ExtResource( 10 )
 finalPosY = 120
 timeToRoll = 4
@@ -2300,17 +2284,19 @@ expand = true
 stretch_mode = 6
 
 [node name="BGBG" type="TextureRect" parent="."]
-margin_left = 35.0
-margin_top = 143.0
-margin_right = 929.0
-margin_bottom = 580.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -447.0
+margin_top = 144.0
+margin_right = 447.0
+margin_bottom = 581.0
 texture = SubResource( 3 )
 expand = true
 stretch_mode = 1
 
 [node name="MASK" type="Light2D" parent="BGBG"]
 light_mask = 2
-position = Vector2( 447, 203 )
+position = Vector2( 447, 221 )
 scale = Vector2( 7.44, 3.6 )
 z_index = -1
 texture = ExtResource( 9 )

@@ -85,17 +85,21 @@ func _check_for_matches():
 		var i = 0	
 		
 		# check each column
-		while(i<roller_results.size()-1):
+		while(i<roller_results.size()):
 			#print("checking ", i, j)
 			
 			# check if all rows in the same column
-			if roller_results[i][0] == roller_results[i][1] and roller_results[i][1] == roller_results[i][2]:
-				match_col(i)
+			if (roller_results[i][0] == roller_results[i][1] and roller_results[i][1] == roller_results[i][2]):
+				match_col(i)				
+				print("match col ", i)
 			# endif
 			
-			# check item by item in each collumn for the same row
-			if (roller_results[i][j] == roller_results[i+1][j]):
-				row_match_nr = 1 + row_match_nr
+			# avoid array out of bounds
+			if(i < roller_results.size()-1):
+				# check item by item in each collumn for the same row
+				if (roller_results[i][j] == roller_results[i+1][j]):
+					row_match_nr = 1 + row_match_nr
+				#endif
 			# endif
 			
 			i = 1 + i
@@ -113,7 +117,7 @@ func _check_for_matches():
 
 
 # func to run when a column matches
-func match_col(var col_id = -1):	
+func match_col(var col_id = 0):	
 	# if the matched column is not already matched 
 	# (to avoid winning multiple times for the same column)
 	if col_matches[col_id] != true:
