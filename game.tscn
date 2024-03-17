@@ -27,13 +27,12 @@ script = ExtResource( 11 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -342.0
-margin_top = 113.0
+margin_top = 80.0
 margin_right = -202.0
-margin_bottom = 6185.0
+margin_bottom = 6152.0
 script = ExtResource( 10 )
-finalPosY = 120
+finalPosY = 80
 timeToRoll = 4
-timeToStart = 0.2
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER0"]
 margin_right = 140.0
@@ -479,13 +478,13 @@ stretch_mode = 6
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -202.0
-margin_top = 113.0
+margin_top = 80.0
 margin_right = -62.0
-margin_bottom = 6185.0
+margin_bottom = 6152.0
 script = ExtResource( 10 )
-finalPosY = 120
+finalPosY = 80
 timeToRoll = 4
-timeToStart = 0.4
+timeToStart = 0.2
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER1"]
 margin_right = 140.0
@@ -931,13 +930,13 @@ stretch_mode = 6
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -62.0
-margin_top = 113.0
+margin_top = 80.0
 margin_right = 78.0
-margin_bottom = 6185.0
+margin_bottom = 6152.0
 script = ExtResource( 10 )
-finalPosY = 120
+finalPosY = 80
 timeToRoll = 4
-timeToStart = 0.6
+timeToStart = 0.3
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER2"]
 margin_right = 140.0
@@ -1383,13 +1382,13 @@ stretch_mode = 6
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 78.0
-margin_top = 113.0
+margin_top = 80.0
 margin_right = 218.0
-margin_bottom = 6185.0
+margin_bottom = 6152.0
 script = ExtResource( 10 )
-finalPosY = 120
+finalPosY = 80
 timeToRoll = 4
-timeToStart = 0.8
+timeToStart = 0.4
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER3"]
 margin_right = 140.0
@@ -1835,13 +1834,13 @@ stretch_mode = 6
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 218.0
-margin_top = 113.0
+margin_top = 80.0
 margin_right = 358.0
-margin_bottom = 6185.0
+margin_bottom = 6152.0
 script = ExtResource( 10 )
-finalPosY = 120
+finalPosY = 80
 timeToRoll = 4
-timeToStart = 1.0
+timeToStart = 0.5
 
 [node name="Fruit1" type="TextureRect" parent="ROLL_MANAGER/ROLLER4"]
 margin_right = 140.0
@@ -2286,18 +2285,18 @@ stretch_mode = 6
 [node name="BGBG" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -447.0
-margin_top = 144.0
-margin_right = 447.0
-margin_bottom = 581.0
+margin_left = -428.0
+margin_top = 110.0
+margin_right = 428.0
+margin_bottom = 595.0
 texture = SubResource( 3 )
 expand = true
 stretch_mode = 1
 
 [node name="MASK" type="Light2D" parent="BGBG"]
 light_mask = 2
-position = Vector2( 447, 221 )
-scale = Vector2( 7.44, 3.6 )
+position = Vector2( 428, 258 )
+scale = Vector2( 7.04, 3.54 )
 z_index = -1
 texture = ExtResource( 9 )
 color = Color( 0, 0, 0, 1 )

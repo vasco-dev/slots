@@ -11,7 +11,7 @@ var roller_results = [	[0,1,2],
 						[0,1,2],
 						[0,1,2],
 						[0,1,2],
-						[0,1,2]	]
+						[0,1,2]]
 						
 # roller_results [0,	 1,		 2,		 3,		 4]
 
@@ -29,7 +29,6 @@ var is_rolling = false
 func _ready():
 	#get refs for rollers
 	all_rollers = get_children()
-
 
 # make all rollers do a roll
 func _do_all_rolls():
@@ -57,7 +56,7 @@ func _do_all_rolls():
 		# endfor
 		
 		# wait until the roll animation has finished playing
-		yield(all_rollers[4]._do_roll(), "completed")
+		yield(get_tree().create_timer(5), "timeout")
 		
 		# reset previous matches and check if there are any valid new matches
 		col_matches = [false,false,false,false,false]
