@@ -2283,6 +2283,7 @@ expand = true
 stretch_mode = 6
 
 [node name="BGBG" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.709804 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -428.0
